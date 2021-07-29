@@ -32,6 +32,15 @@
             <h1 class="title">Some of Your Greatest Ideas Started Here</h1><br>
           </div>
         </div>
+        <h3> Sort By:</h3>
+        <button class = "button" onclick = "renderSortedData()"> 
+            Title
+        </button>
+
+        <!-- <button class = "button" onclick = "sortByText()"> 
+            Text
+        </button>
+         -->
         <div id="app" class="columns is-multiline">
           <!-- Note cards will render here -->
         </div>
@@ -47,6 +56,52 @@
         </div>
       </div>
     </footer>
+
+    <div id = "editNoteModal" class = "modal">
+        <div class = "modal-background"> 
+
+        </div>
+
+        <div class = "modal-card">
+            <section class = "modal-card-body">
+                <input class = "input is-normal" id = "editTitleInput" type = "text"/>
+                <input class = "input is-normal" id = "editTextInput" type = "text"/>
+                <input id = "noteId" type = "hidden"/>
+            </section>
+
+            <footer class = "modal-card-footer">
+                <button class = "button is-success" onclick = "saveEditedNote() "> 
+                    Save Changes
+                </button>
+
+                <button class = "button" onclick = "closeEditModal()"> 
+                    Cancel
+                </button>
+            </footer>
+        </div>
+    </div>
+
+    <div id = "deleteNoteModal" class = "modal">
+        <div class = "modal-background"> 
+
+        </div>
+
+        <div class = "modal-card">>
+            <section class = "modal-card-body">
+                <span> Are you sure you would like to delete? </span>
+            </section>
+            <footer class = "modal-card-footer">
+                <button class = "button is-danger" onclick = "deleteNote()"> 
+                    Delete
+                </button>
+
+                <button class = "button" onclick = "cancelDelete()"> 
+                    Cancel
+                </button>
+            </footer>
+        </div>
+    </div>
+
   </body>
 
 </html>
